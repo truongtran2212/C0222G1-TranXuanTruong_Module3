@@ -10,3 +10,5 @@ id int primary key auto_increment,
 age int,
 country varchar(50)
 );
+insert class (name) values ("truong");
+insert teacher (name, age, country) values ("tung",18,"Viet Nam");
