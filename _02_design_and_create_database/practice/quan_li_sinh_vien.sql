@@ -36,7 +36,7 @@ id_student int not null UNIQUE ,
 mark float DEFAULT(0)
 check (0 <= mark <= 100),
 exam TINYINT DEFAULT(1),
-FOREIGN KEY (id_sub) REFERENCES subject (id_sub),
+FOREIGN KEY (id_sub) REFERENCES `subject` (id_sub),
 FOREIGN KEY (id_student) REFERENCES student (id_student)
 );
 
