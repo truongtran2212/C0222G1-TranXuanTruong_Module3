@@ -80,21 +80,21 @@ SELECT * from nhan_vien;
 
 create TABLE loai_khach(
 id int PRIMARY KEY AUTO_INCREMENT,
-ten_loai_hang varchar(45)
+ten_loai_khach varchar(45)
 );
 
-INSERT into loai_khach (ten_loai_hang) values ("Diamond");
-INSERT into loai_khach (ten_loai_hang) values ("Platinum");
-INSERT into loai_khach (ten_loai_hang) values ("Gold");
-INSERT into loai_khach (ten_loai_hang) values ("Silver");
-INSERT into loai_khach (ten_loai_hang) values ("Member");
+INSERT into loai_khach (ten_loai_khach) values ("Diamond");
+INSERT into loai_khach (ten_loai_khach) values ("Platinum");
+INSERT into loai_khach (ten_loai_khach) values ("Gold");
+INSERT into loai_khach (ten_loai_khach) values ("Silver");
+INSERT into loai_khach (ten_loai_khach) values ("Member");
 
 select * from loai_khach;
 
 create TABLE khach_hang(
 id int PRIMARY key AUTO_INCREMENT,
-id_khach_hang int,
-FOREIGN KEY (id_khach_hang) REFERENCES loai_khach (id),
+id_loai_khach int,
+FOREIGN KEY (id_loai_khach) REFERENCES loai_khach (id),
 
 ho_ten VARCHAR(45) not null,
 ngay_sinh date not null,
@@ -105,16 +105,16 @@ email varchar(45),
 dia_chi varchar(45)
 );
 
-INSERT into khach_hang (id_khach_hang,ho_ten,ngay_sinh,gioi_tinh,so_cmnd,so_dien_thoai,email,dia_chi) 
+INSERT into khach_hang (id_loai_khach,ho_ten,ngay_sinh,gioi_tinh,so_cmnd,so_dien_thoai,email,dia_chi) 
 values (2,"Trần Văn Tùng","1995-01-01",0,"123123123","000000001","tung","Đà Nẵng");
 
-INSERT into khach_hang (id_khach_hang,ho_ten,ngay_sinh,gioi_tinh,so_cmnd,so_dien_thoai,email,dia_chi)
+INSERT into khach_hang (id_loai_khach,ho_ten,ngay_sinh,gioi_tinh,so_cmnd,so_dien_thoai,email,dia_chi)
  values (1,"Nguyễn Văn Thái","1999-04-12",0,"2222222","000022222","thai","Quảng Trị");
  
-INSERT into khach_hang (id_khach_hang,ho_ten,ngay_sinh,gioi_tinh,so_cmnd,so_dien_thoai,email,dia_chi)
- values (3,"Đặng Văn Thiện","2003-12-01",0,"1111111","5555500001","thien","Huê");
+INSERT into khach_hang (id_loai_khach,ho_ten,ngay_sinh,gioi_tinh,so_cmnd,so_dien_thoai,email,dia_chi)
+ values (1,"Đặng Văn Thiện","2003-12-01",0,"1111111","5555500001","thien","Huê");
  
-INSERT into khach_hang (id_khach_hang,ho_ten,ngay_sinh,gioi_tinh,so_cmnd,so_dien_thoai,email,dia_chi)
+INSERT into khach_hang (id_loai_khach,ho_ten,ngay_sinh,gioi_tinh,so_cmnd,so_dien_thoai,email,dia_chi)
  values (2,"Nguyễn Ngọc Nhi","2008-01-12",1,"5555555","456456","nhi","Đà Nẵng");
  
  SELECT * from khach_hang;
@@ -204,13 +204,16 @@ FOREIGN KEY (id_dich_vu) REFERENCES dich_vu (id)
 );
 
 INSERT into hop_dong (ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,id_nhan_vien,id_khach_hang,id_dich_vu) 
-values ("2022-05-12","2022-05-14",500000.0,1,1,1);
+values ("2021-01-12","2022-05-14",500000.0,1,2,1);
 
 INSERT into hop_dong (ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,id_nhan_vien,id_khach_hang,id_dich_vu)
- values ("2022-05-17","2022-05-20",100000.0,2,2,2);
+ values ("2021-05-17","2022-05-20",100000.0,2,2,2);
  
 INSERT into hop_dong (ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,id_nhan_vien,id_khach_hang,id_dich_vu) 
-values ("2022-05-03","2022-05-06",50000.0,3,3,3);
+values ("2021-02-03","2022-05-06",50000.0,3,3,3);
+
+INSERT into hop_dong (ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,id_nhan_vien,id_khach_hang,id_dich_vu)
+ values ("2021-05-20","2022-05-25",6000000.0,2,2,1);
 
 select * from hop_dong;
 

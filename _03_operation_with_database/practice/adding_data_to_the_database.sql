@@ -26,7 +26,7 @@ FOREIGN KEY (id_class) REFERENCES class (id)
 
 INSERT into student (student_name, address, phone, `status`, id_class) values ("Hung","Ha Noi","0912113113",true,1);
 INSERT into student (student_name, address, phone, `status`, id_class) values ("Hoa","Hai Phong",null,true,1);
-INSERT into student (student_name, address, phone, `status`, id_class) values ("Hung","HCM","0123123123",false,2);
+INSERT into student (student_name, address, phone, `status`, id_class) values ("Manh","HCM","0123123123",false,2);
 
 select * from student WHERE `status` = true;
 
