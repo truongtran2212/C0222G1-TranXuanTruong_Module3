@@ -1,4 +1,4 @@
-CREATE DATABASE quan_ly_sinh_vien;
+CREATE DATABASE if not exists quan_ly_sinh_vien;
 use quan_ly_sinh_vien;
 create table class (
 id int PRIMARY KEY AUTO_INCREMENT,
@@ -56,8 +56,15 @@ FOREIGN KEY (id_student) REFERENCES student (id)
 
 INSERT into mark (id_sub, id_student, mark, exam_times) values (1,1,8,1);
 INSERT into mark (id_sub, id_student, mark, exam_times) values (1,2,10,2);
-INSERT into mark (id_sub, id_student, mark, exam_times) values (2,1,12,1);
+INSERT into mark (id_sub, id_student, mark, exam_times) values (1,3,1s2,1);
 
+INSERT into mark (id_sub, id_student, mark, exam_times) values (3,1,15,1);
+INSERT into mark (id_sub, id_student, mark, exam_times) values (2,2,20,2);
+INSERT into mark (id_sub, id_student, mark, exam_times) values (2,3,5,1);
+
+INSERT into mark (id_sub, id_student, mark, exam_times) values (2,1,9,1);
+INSERT into mark (id_sub, id_student, mark, exam_times) values (3,2,8,2);
+INSERT into mark (id_sub, id_student, mark, exam_times) values (3,3,7,1);
 select * from mark;
 
 
