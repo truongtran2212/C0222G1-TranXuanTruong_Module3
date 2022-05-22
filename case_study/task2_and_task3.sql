@@ -2,13 +2,12 @@ use case_study;
 --  Task 2: Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 kí tự.
 
 SELECT *  from nhan_vien 
-WHERE (ho_ten LIKE "T%" or ho_ten LIKE "K%" or ho_ten LIKE "H%") and length(15);
-
+WHERE (ho_ten LIKE "T%" or ho_ten LIKE "K%" or ho_ten LIKE "H%") and char_length(ho_ten) <= 15;
 
 -- Điều kiện hiển thị theo tên
 SELECT *  from nhan_vien
 where ((SELECT substring_index(ho_ten, " ",-1)) like "T%" or (SELECT substring_index(ho_ten, " ",-1)) like "K%" or
-(SELECT substring_index(ho_ten, " ",-1) like "H%")) and length(15);
+(SELECT substring_index(ho_ten, " ",-1) like "H%")) and char_length(ho_ten) <= 15;
 
 -- Task 3:
 SELECT * from khach_hang
@@ -34,7 +33,7 @@ ORDER BY so_lan_dat_phong;
 --  (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
 
 select kh.ma_khach_hang, kh.ho_ten, lk.ten_loai_khach, hd.ma_hop_dong, dv.ten_dich_vu, hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, 
-sum(dv.chi_phi_thue + (hdct.so_luong * dvdk.gia)) AS tong_tien
+sum(dv.chi_phi_thue + coalesce(hdct.so_luong * dvdk.gia,0)) AS tong_tien
 from khach_hang kh
 left join hop_dong as hd on hd.ma_khach_hang =  kh.ma_khach_hang
 left join hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong
@@ -73,9 +72,16 @@ SELECT ho_ten from khach_hang union SELECT ho_ten from khach_hang;
 
 -- Task 9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2021 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
 
-SELECT month(ngay_lam_hop_dong) as thang_co_hop_dong, COUNT(month(ngay_lam_hop_dong)) as so_lan_dat_trong_thang from hop_dong where year(ngay_lam_hop_dong) = 2021
-group by month(ngay_lam_hop_dong);
+select month(ngay_lam_hop_dong),COUNT(month(ngay_lam_hop_dong))  as so_lan_dat_phong,
+case
+when year(ngay_lam_hop_dong) = 2021 then COUNT(month(ngay_lam_hop_dong))
+when year(ngay_lam_hop_dong) <> 2021 then null
+end as so_lan_dat_phong_trong_nam_2021
+from hop_dong
+GROUP BY month(ngay_lam_hop_dong)
+order by month(ngay_lam_hop_dong) ; 
 
+SELECT month(ngay_lam_hop_dong) from hop_dong where year(ngay_lam_hop_dong) <> 2021;
 -- Task 10.	Hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm. 
 -- Kết quả hiển thị bao gồm ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem 
 -- (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).
@@ -212,3 +218,57 @@ where year(hd.ngay_lam_hop_dong) = 2020 and hdct.so_luong > 10) as gia);
 select ma_nhan_vien,ho_ten,ngay_sinh, email,so_dien_thoai,ngay_sinh, dia_chi from nhan_vien
 union all
 select ma_khach_hang,ho_ten,ngay_sinh, email,so_dien_thoai,ngay_sinh, dia_chi from khach_hang;
+
+-- Task 21.	Tạo khung nhìn có tên là v_nhan_vien để lấy được thông tin của tất cả các nhân viên có địa chỉ
+--  là “Hải Châu” và đã từng lập hợp đồng cho một hoặc nhiều khách hàng bất kì với ngày lập hợp đồng là “25/04/2021”.
+
+create view v_nhan_vien as 
+select nv.* from nhan_vien nv
+join hop_dong hd on hd.ma_nhan_vien = nv.ma_nhan_vien
+where dia_chi like "%Đà Nẵng%" and hd.ngay_lam_hop_dong = "2021-04-25";
+
+select * from v_nhan_vien;
+
+-- Task 22.	Thông qua khung nhìn v_nhan_vien thực hiện cập nhật địa chỉ thành “Liên Chiểu” 
+-- đối với tất cả các nhân viên được nhìn thấy bởi khung nhìn này.
+
+update v_nhan_vien set dia_chi = replace(dia_chi, "Hải Châu", "Liên Chiểu") 
+where dia_chi like "%Hải Châu%";
+
+-- SET GLOBAL log_bin_trust_function_creators = 1;
+-- delimiter \\
+-- create function doi_dia_chi(dia_chi varchar(50), dia_chi_muon_thay_doi varchar(50))
+-- returns varchar(50)
+-- begin 
+-- 	declare ten_duong varchar(100);
+--     declare ten_thanh_pho varchar(100);
+--     declare dia_chi_thay_doi varchar(100);
+--     set ten_duong = substr(dia_chi, 1 ,instr(dia_chi,","));
+--     set ten_thanh_pho = reverse(substr(reverse(dia_chi),1, instr(reverse(dia_chi),",")));
+--     set dia_chi_thay_doi = concat(ten_duong, dia_chi_muon_thay_doi, ten_thanh_pho);
+--     return dia_chi_thay_doi;
+-- end \\
+-- delimiter ;
+
+-- update v_nhan_vien
+-- set dia_chi = doi_dia_chi(dia_chi, 'Liên Chiểu');
+
+
+-- Task 23.	Tạo Stored Procedure sp_xoa_khach_hang dùng để xóa thông tin của một khách hàng 
+-- nào đó với ma_khach_hang được truyền vào như là 1 tham số của sp_xoa_khach_hang.
+
+delimiter \\
+
+create procedure sp_xoa_khach_hang (ma_khach_hang_muon_xoa int)
+
+begin
+delete from khach_hang where ma_khach_hang = ma_khach_hang_muon_xoa;
+end \\
+
+delimiter ;
+
+call sp_xoa_khach_hang (1)
+
+
+
+
