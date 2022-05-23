@@ -1,7 +1,35 @@
 th {
     border: black;
     padding-right: 110px;
+    padding-top: 50px;
+}
+th:hover {
+    border: black;
+    padding-bottom: 150px;
+    transition: 0s;
 }
 a {
     font-size: 20px;
 }
+a:hover{
+    font-size: 30px;
+}
+#header{
+    position: sticky;
+    text-align: center;
+    font-size: 30px;
+    width: 100%;
+    top: 0;
+    background-color: aqua;
+}
+div{
+    height: 400px;
+}
+#change {
+    font-size: 18px;
+}
+#change:hover{
+    font-size: 30px;
+}
+
+
