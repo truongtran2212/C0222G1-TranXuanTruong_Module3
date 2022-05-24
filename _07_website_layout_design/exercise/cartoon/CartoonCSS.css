@@ -1,0 +1,123 @@
+body {
+    font-family: Arial;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header, .footer {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    height: 100px;
+    background-color: #F5F5F5;
+    border: 1px solid #CDCDCD;
+    margin-bottom: 5px;
+    z-index: 10;
+}
+
+.head_link {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #CDCDCD;
+    background-color: #F5F5F5;
+    margin-bottom: 5px;
+    clear: both;
+}
+
+.main {
+    width: 100%;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left_content {
+    height: 1000px;
+    float: left;
+    background-color: #F5F5F5;
+    margin-bottom: 5px;
+    overflow-y: scroll;
+}
+.hobby span {
+    border: 1px solid black;
+    margin-left: 20px;
+}
+
+.hobby {
+    margin-left: 30%;
+}
+
+.rigth_content {
+    min-height: 1000px;
+    background-color: #F5F5F5;
+    float: right;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.footer {
+    height: 50px;
+    clear: both;
+    border: 1px solid #CDCDCD;
+    background-color: #F8F8FF;
+}
+
+div iframe {
+    margin-top: 20px;
+}
+p {
+    text-indent: 40px;
+    font-size: 20px;
+}
+
+.col-md-1 {
+    width: 8.33333%;
+}
+
+.col-md-2 {
+    width: 16.66667%;
+}
+
+.col-md-3 {
+    width: 25%;
+}
+
+.col-md-4 {
+    width: 33.33333%;
+}
+
+.col-md-5 {
+    width: 41.66667%;
+}
+
+.col-md-6 {
+    width: 50%;
+}
+
+.col-md-7 {
+    width: 58.33333%;
+}
+
+.col-md-8 {
+    width: 66.66667%;
+}
+
+.col-md-9 {
+    width: 75%;
+}
+
+.col-md-10 {
+    width: 83.33333%;
+}
+
+.col-md-11 {
+    width: 91.66667%;
+}
+
+.col-md-12 {
+    width: 100%;
+}
