@@ -1,0 +1,27 @@
+.service {
+    display: flex;
+    flex-wrap: wrap;
+}
+.delete-dot {
+    list-style-type: none !important;
+    color: blue;
+}
+.all-in-one{
+   display: flex;
+    flex-wrap: wrap;
+}
+.links  {
+    display: flex;
+    flex-wrap: wrap;
+}
+li {
+
+    margin-right: 70px;
+}
+picture {
+    align-items: center;
+}
+.product {
+    display: flex;
+    flex-wrap: wrap;
+}
