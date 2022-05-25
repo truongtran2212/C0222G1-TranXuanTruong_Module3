@@ -5,7 +5,7 @@ body {
     background-color: red;
     height: 70px;
     width: 100%;
-    font-size: 30px;
+    font-size: 2rem;
 }
 .footer{
     width: 100%;
@@ -43,6 +43,7 @@ span {
 .row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 ul {
     padding: 0;
@@ -55,7 +56,7 @@ ul li {
     margin: 16px;
 }
 ul li:hover {
-    font-size: 35px;
+    font-size: 2rem;
 }
 .login {
     float: right;
@@ -68,11 +69,16 @@ ul li:hover {
 p {
     text-align: center;
     margin-top: 50px;
-    font-size: 30px;
+    font-size: 2rem;
 }
 span {
     margin-left: 400px;
     margin-top: 20px;
+}
+@media only screen and (max-width: 900px) {
+[class*="col-"]
+{width: 100%}
+
 }
 
 .col-md-1 {

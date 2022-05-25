@@ -2,7 +2,7 @@
     background-color: bisque;
     height: 50px;
     width: 100%;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .footer {
@@ -121,4 +121,13 @@ img {
     flex-wrap: nowrap;
     margin-top: 40px;
     align-items: center;
+}
+@media only screen and (max-width: 900px) {
+    [class*="col-"] {
+        width: 100%
+    }
+}@media only screen and (max-width: 600px) {
+    [class*="col-"] {
+        width: 100%
+    }
 }

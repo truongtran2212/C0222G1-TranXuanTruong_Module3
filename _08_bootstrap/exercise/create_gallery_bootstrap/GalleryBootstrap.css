@@ -1,0 +1,7 @@
+body {
+    font-family: Arial;
+}
+.season {
+    display: flex;
+    flex-wrap: wrap;
+}
