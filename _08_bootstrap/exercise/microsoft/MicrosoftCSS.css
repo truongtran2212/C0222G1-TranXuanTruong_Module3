@@ -15,11 +15,7 @@
     flex-wrap: wrap;
 }
 li {
-
-    margin-right: 70px;
-}
-picture {
-    align-items: center;
+    margin-right: 20px;
 }
 .product {
     display: flex;
