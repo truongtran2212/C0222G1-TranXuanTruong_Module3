@@ -17,7 +17,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4">
+        <div class="col-md-4" style="border: 1px solid royalblue">
             <h3 style="text-align: center">Product Discount Calculator</h3>
 
             <form action="/voucher" method="post"  style="display: flex; flex-wrap: wrap">

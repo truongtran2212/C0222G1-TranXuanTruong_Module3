@@ -62,6 +62,9 @@
 .left i {
     margin-top: 50px;
 }
+i {
+    color: blue;
+}
 
 .col-md-1 {
     width: 8.33333%;
