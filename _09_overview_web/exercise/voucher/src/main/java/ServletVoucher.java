@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 public class ServletVoucher extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+            String productDescription = request.getParameter("description");
             double listPrice = Double.parseDouble(request.getParameter("price"));
             double discountPercent = Double.parseDouble(request.getParameter("discount"));
 
@@ -17,15 +18,12 @@ public class ServletVoucher extends HttpServlet {
                 double discountAmount = listPrice * discountPercent * 0.01;
                 double discountPrice = listPrice - discountAmount;
 
-                PrintWriter printWriter = response.getWriter();
-
-                printWriter.println("<html>");
-
-                printWriter.println("<h1>Discount Amount: " + discountAmount + "<h1>");
-                printWriter.println("<h1>Discount Price: " + discountPrice + "<h1>");
-                printWriter.println("</html>");
-                // Có dòng này thì không chạy được
-//            request.getRequestDispatcher("index.jsp").forward(request, response);
+                request.setAttribute("productDescription", productDescription);
+                request.setAttribute("listPrice", listPrice);
+                request.setAttribute("discountPercent", discountPercent);
+                request.setAttribute("discountAmount", discountAmount);
+                request.setAttribute("discountPrice", discountPrice);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
             else {
                 request.getRequestDispatcher("negative.jsp").forward(request, response);

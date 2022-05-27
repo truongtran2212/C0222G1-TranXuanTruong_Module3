@@ -24,7 +24,7 @@
 
 
                 <div class="col-md-6">
-                    <label for="decription">Product Description:</label>
+                    <label for="description">Product Description:</label>
                     <br>
                     <label for="price">List Price:</label>
                     <br>
@@ -33,18 +33,17 @@
 
 
                 <div class="col-md-6" >
-                    <input type="text" id="decription" name="decription" placeholder="decription">
+                    <input type="text" id="description" name="description" placeholder="description" value="${productDescription}">
 
-                    <input type="text" id="price" name="price" placeholder="price">
+                    <input type="text" id="price" name="price" placeholder="price" value="${listPrice}">
 
-                    <input type="text" id="discount" name="discount" placeholder="decription">
+                    <input type="text" id="discount" name="discount" placeholder="discountPercent" value="${discountPercent}">
                 </div>
-
 
                 <button type="submit" class="btn btn-primary" >Calculate Discount</button>
             </form>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-4">Discount Amount: ${discountAmount}</div>
     </div>
 </div>
 </body>
