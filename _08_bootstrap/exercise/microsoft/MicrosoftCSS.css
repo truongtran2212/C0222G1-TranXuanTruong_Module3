@@ -8,7 +8,7 @@
 }
 .all-in-one{
    display: flex;
-    flex-wrap: wrap;
+    left: 0;
 }
 .links  {
     display: flex;
@@ -20,4 +20,15 @@ li {
 .product {
     display: flex;
     flex-wrap: wrap;
+}
+.image-in-all-in-one{
+   background-color: hsl(0, 0%, 90%);
+    height: 200px;
+    padding-left: 50px;
+
+}
+.slide-show {
+    margin-top: 30px;
+    margin-right: 200px;
+    font-size: 1.3rem;
 }
