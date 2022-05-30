@@ -32,7 +32,7 @@ public class ProductServlet extends HttpServlet {
                 update(request, response);
                 break;
             case "delete":
-
+                delete(request, response);
                 break;
             case "search":
                 break;
@@ -55,7 +55,7 @@ public class ProductServlet extends HttpServlet {
                 showFormUpdate(request, response);
                 break;
             case "delete":
-                delete(request, response);
+                showFormDelete(request, response);
                 break;
             case "search":
                 break;
@@ -105,14 +105,6 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
-    private void delete(HttpServletRequest request, HttpServletResponse response) {
-        int idProduct = Integer.parseInt(request.getParameter("idProduct"));
-
-        productService.delete(idProduct);
-        request.setAttribute("message", "Delete successful");
-        showProductList(request, response);
-
-    }
 
     private void update(HttpServletRequest request, HttpServletResponse response) {
         int idProduct = Integer.parseInt(request.getParameter("idProduct"));
@@ -163,6 +155,42 @@ public class ProductServlet extends HttpServlet {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void delete(HttpServletRequest request, HttpServletResponse response) {
+        int idProduct = Integer.parseInt(request.getParameter("idProduct"));
+        Product product = productService.findById(idProduct);
+        RequestDispatcher dispatcher;
+        if (product == null) {
+            dispatcher = request.getRequestDispatcher("view/error-404.jsp");
+        } else {
+            this.productService.delete(idProduct);
+        }
+        try {
+            response.sendRedirect("/product");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void showFormDelete(HttpServletRequest request, HttpServletResponse response) {
+        int idProduct = Integer.parseInt(request.getParameter("idProduct"));
+        Product product = productService.findById(idProduct);
+        RequestDispatcher dispatcher;
+        if (product == null) {
+            dispatcher = request.getRequestDispatcher("view/error-404.jsp");
+        } else {
+            request.setAttribute("product", product);
+            dispatcher = request.getRequestDispatcher("view/product/delete.jsp");
+            try {
+                dispatcher.forward(request, response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

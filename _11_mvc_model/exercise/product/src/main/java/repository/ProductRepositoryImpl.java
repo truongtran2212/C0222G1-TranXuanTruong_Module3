@@ -10,11 +10,11 @@ public class ProductRepositoryImpl implements ProductRepository {
     public static List<Product> productList = new ArrayList<>();
 
     static {
-        productList.add(new Product(1, "Iphone", 20000));
-        productList.add(new Product(2, "Samsung", 10000));
-        productList.add(new Product(3, "Xiaomi", 40000));
-        productList.add(new Product(4, "Lenovo", 50000));
-        productList.add(new Product(5, "Huawei", 60000));
+        productList.add(new Product(0, "Iphone", 20000));
+        productList.add(new Product(1, "Samsung", 10000));
+        productList.add(new Product(2, "Xiaomi", 40000));
+        productList.add(new Product(3, "Lenovo", 50000));
+        productList.add(new Product(4, "Huawei", 60000));
     }
 
     @Override

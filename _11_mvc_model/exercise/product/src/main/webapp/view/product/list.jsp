@@ -17,15 +17,16 @@
 <a href="view/product/create.jsp">Thêm mới</a>
 <table style="border: 1px solid black">
     <tr>
-
+        <th>STT</th>
         <th>id Product</th>
         <th>name Product</th>
         <th>price Product</th>
         <th>role</th>
     </tr>
 
-    <c:forEach items="${productList}" var="product">
+    <c:forEach items="${productList}" var="product" varStatus="status">
         <tr>
+            <td>${status.count}</td>
             <td>${product.idProduct}</td>
             <td>${product.nameProduct}</td>
             <td>${product.priceProduct}</td>
