@@ -17,6 +17,7 @@
 <a href="view/product/create.jsp">Thêm mới</a>
 <table style="border: 1px solid black">
     <tr>
+
         <th>id Product</th>
         <th>name Product</th>
         <th>price Product</th>

@@ -15,4 +15,6 @@ public interface ProductService {
     Map<String,String> save(Product product);
 
     void delete(int id);
+
+    void update(int id, Product product);
 }

@@ -41,4 +41,10 @@ public class ProductRepositoryImpl implements ProductRepository {
     public void delete(int id) {
         productList.remove(id);
     }
+
+    @Override
+    public void update(int id, Product product) {
+        productList.add(id,product);
+    }
+
 }
