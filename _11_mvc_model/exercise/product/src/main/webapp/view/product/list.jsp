@@ -12,6 +12,12 @@
     <title>Title</title>
 </head>
 <body>
+<form action="/product" method="get">
+<input type="text" name="name" placeholder="input name">
+<input type="hidden" name="action" value="search">
+<button type="submit">Search</button>
+
+</form>
 <h1>Danh sách sản phẩm</h1>
 
 <a href="view/product/create.jsp">Thêm mới</a>
@@ -28,7 +34,9 @@
         <tr>
             <td>${status.count}</td>
             <td>${product.idProduct}</td>
-            <td>${product.nameProduct}</td>
+            <td>
+                <a href="/product?action=information&idProduct=${product.idProduct}"> ${product.nameProduct}</a>
+            </td>
             <td>${product.priceProduct}</td>
             <td>
                 <a href="/product?action=update&idProduct=${product.idProduct}">update</a>

@@ -8,7 +8,7 @@ import java.util.Map;
 public interface ProductService {
     List<Product> findAll();
 
-    Product findByName(String nameProduct);
+    List<Product> findByName(String nameProduct);
 
     Product findById(int id);
 

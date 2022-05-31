@@ -12,23 +12,23 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/product">Back list</a>
 <c:if test="${mess!=null}">
     <p>${mess}</p>
 </c:if>
+<a href="/product">Back List</a>
 <form action="/product?action=update" method="post">
     <table>
         <tr>
             <td>Id product</td>
-            <td><input type="text" name="idProduct" value="${requestScope["product"].getIdProduct}"></td>
+            <td><input type="text" name="idProduct" value="${requestScope["product"].getIdProduct()}"></td>
         </tr>
         <tr>
             <td> Name Product</td>
-            <td><input type="text" name="nameProduct" value="${requestScope["product"].getNameProduct}"></td>
+            <td><input type="text" name="nameProduct" value="${requestScope["product"].getNameProduct()}"></td>
         </tr>
         <tr>
             <td> Price Product</td>
-            <td><input type="text" name="priceProduct" value="${requestScope["product"].getPriceProduct}"></td>
+            <td><input type="text" name="priceProduct" value="${requestScope["product"].getPriceProduct()}"></td>
         </tr>
         <tr>
             <td>  <button type="submit">Update</button></td>
