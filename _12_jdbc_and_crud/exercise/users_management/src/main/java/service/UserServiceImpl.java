@@ -13,4 +13,14 @@ public class UserServiceImpl implements IUserService{
     public List<User> findAll() {
         return userRepository.findAll();
     }
+
+    @Override
+    public void delete(int id) {
+        userRepository.delete(id);
+    }
+
+    @Override
+    public User findById(int id) {
+        return userRepository.findById(id);
+    }
 }

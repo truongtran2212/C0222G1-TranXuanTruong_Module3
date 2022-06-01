@@ -20,14 +20,25 @@
         <th>name</th>
         <th>email</th>
         <th>country</th>
+        <th>status</th>
     </tr>
     <c:forEach items="${userList}" var="user">
+        <c:if test="status == 0">
         <tr>
             <td>${user.id}</td>
             <td>${user.name}</td>
             <td>${user.email}</td>
             <td>${user.country}</td>
+            <td>${user.status}</td>
+            <td>
+                <a href="/users?action=update&id=${user.id}">update</a>
+            </td>
+
+            <td>
+                <a href="/users?action=delete&id=${user.id}">delete</a>
+            </td>
         </tr>
+        </c:if>
     </c:forEach>
 </table>
 </body>
