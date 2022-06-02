@@ -19,6 +19,10 @@
 <form action="/user?action=update" method="post">
     <table>
         <tr>
+            <td>Id</td>
+            <td><input type="hidden" name="id" value="${requestScope["user"].getId()}"></td>
+        </tr>
+        <tr>
             <td>Name</td>
             <td><input type="text" name="name" value="${requestScope["user"].getName()}"></td>
         </tr>
@@ -29,6 +33,10 @@
         <tr>
             <td> Country </td>
             <td><input type="text" name="country" value="${requestScope["user"].getCountry()}"></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><input type="hidden" name="status" value="${requestScope["user"].getStatus()}"></td>
         </tr>
         <tr>
             <td>  <button type="submit">Update</button></td>

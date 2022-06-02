@@ -13,7 +13,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
   <c:redirect url="/users"></c:redirect>
   </body>
 </html>

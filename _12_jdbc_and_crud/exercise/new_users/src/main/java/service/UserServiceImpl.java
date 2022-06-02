@@ -26,11 +26,16 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void create(User user) {
-
+        userRepository.create(user);
     }
 
     @Override
     public void update(int id, User user) {
         userRepository.update(id, user);
+    }
+
+    @Override
+    public List<User> findByCountry(String country) {
+        return userRepository.findByCountry(country);
     }
 }

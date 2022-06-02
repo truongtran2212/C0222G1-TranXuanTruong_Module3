@@ -14,6 +14,8 @@ public class UserRepositoryImpl implements IUserRepository {
     private static final String SELECT_ALL = "SELECT * from users order by `name`;";
     private static final String UPDATE_DELETE = "UPDATE users set `status` = 1 where id = ?;";
     private static final String UPDATE = "update users set `name`= ?, email = ?, country = ? where id = ?;";
+    private static final String FIND_BY_NAME = "SELECT * from users where country = ?;";
+    private static final String CREATE = "insert INTO users (`name`,email,country) values (?,?,?);";
 
 
     @Override
@@ -79,7 +81,16 @@ public class UserRepositoryImpl implements IUserRepository {
 
     @Override
     public void create(User user) {
-
+        Connection connection = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement ps = connection.prepareStatement(CREATE);
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getEmail());
+            ps.setString(3, user.getCountry());
+            ps.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     @Override
@@ -88,14 +99,36 @@ public class UserRepositoryImpl implements IUserRepository {
         try {
             PreparedStatement ps = connection.prepareStatement(UPDATE);
 
-            ps.setString(1,user.getName());
-            ps.setString(2,user.getEmail());
-            ps.setString(3,user.getCountry());
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getEmail());
+            ps.setString(3, user.getCountry());
 
-            ps.setInt(4,id);
+            ps.setInt(4, id);
             ps.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    @Override
+    public List<User> findByCountry(String country) {
+        List<User> userList = findAll();
+        List<User> searchByCountry = new ArrayList<>();
+        Connection connection = BaseRepository.getConnectDB();
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(FIND_BY_NAME);
+            ps.setString(1, country);
+            ResultSet resultSet = ps.executeQuery();
+            resultSet.next();
+            for (User item : userList) {
+                if (item.getCountry().contains(country)) {
+                    searchByCountry.add(item);
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return searchByCountry;
     }
 }

@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap-4.0.0-dist/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -21,5 +21,5 @@
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
 
-<script src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+<script src="/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>;
 </html>

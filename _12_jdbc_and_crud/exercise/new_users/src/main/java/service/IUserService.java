@@ -10,4 +10,5 @@ public interface IUserService {
     User findById(int id);
     void create (User user);
     void update( int id, User user);
+    List<User> findByCountry(String country);
 }
