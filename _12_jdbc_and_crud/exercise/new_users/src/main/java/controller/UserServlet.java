@@ -133,7 +133,6 @@ public class UserServlet extends HttpServlet {
         userService.delete(id);
         List<User> userList = userService.findAll();
 
-        request.setAttribute("mess", "successful add new");
         request.setAttribute("userList", userList);
 
         try {

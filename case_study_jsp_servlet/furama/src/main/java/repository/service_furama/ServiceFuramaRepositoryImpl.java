@@ -76,4 +76,5 @@ public class ServiceFuramaRepositoryImpl implements ServiceFuramaRepository{
             throwables.printStackTrace();
         }
     }
+
 }

@@ -38,19 +38,28 @@
                 <td>${service.descriptionOtherConvenience}</td>
                 <td>${service.poolArea}</td>
                 <td>${service.numberOfFloors}</td>
-                <td>${service.rentTypeId}</td>
-                <td>${service.serviceTypeId}</td>
+                <td>
+                    <c:if test="${service.rentTypeId==1}">Year</c:if>
+                    <c:if test="${service.rentTypeId==2}">Month</c:if>
+                    <c:if test="${service.rentTypeId==3}">Day</c:if>
+                    <c:if test="${service.rentTypeId==4}">Hour</c:if>
+                </td>
+                <td>
+                    <c:if test="${service.serviceTypeId==1}">Villa</c:if>
+                    <c:if test="${service.serviceTypeId==2}">House</c:if>
+                    <c:if test="${service.serviceTypeId==3}">Room</c:if>
+                </td>
                 <td>${service.status}</td>
                 <td>
-                    <a href="/user?action=update&id=${user.id}">
+                    <a href="/service?action=update&id=${user.id}">
                         <button type="button" class="btn btn-primary">update</button>
                     </a>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#h${user.id}">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#h${service.idService}">
                         Delete
                     </button>
-                    <div class="modal fade" id="h${user.id}" tabindex="-1" role="dialog"
+                    <div class="modal fade" id="h${service.idService}" tabindex="-1" role="dialog"
                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -65,7 +74,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <a href="/user?action=delete&id=${user.id}">
+                                    <a href="/service?action=delete&id=${service.idService}">
                                         <button type="button" class="btn btn-primary">delete</button>
                                     </a>
 

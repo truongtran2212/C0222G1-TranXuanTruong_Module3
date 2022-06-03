@@ -12,6 +12,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  <c:redirect url="/furama">Home page furama</c:redirect>
+  <c:redirect url="/furama"></c:redirect>
   </body>
 </html>

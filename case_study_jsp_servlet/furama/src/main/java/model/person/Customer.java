@@ -54,6 +54,26 @@ public class Customer {
         this.customerTypeId = customerTypeId;
     }
 
+    public Customer(String customerName,
+                    String birthday,
+                    int gender,
+                    String idCard,
+                    String phone,
+                    String email,
+                    String address,
+                    int customerTypeId,
+                    int status) {
+        this.customerName = customerName;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.customerTypeId = customerTypeId;
+        this.status = status;
+    }
+
     public String getIdCustomer() {
         return idCustomer;
     }

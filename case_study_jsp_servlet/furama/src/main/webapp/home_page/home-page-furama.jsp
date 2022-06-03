@@ -48,7 +48,7 @@
                     Customer
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="/customer">Customer List</a>
                     <a class="dropdown-item" href="#">Another action</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
@@ -86,10 +86,9 @@
         </form>
     </div>
 </nav>
-<div class="container-fluid body"
-     style="background-image:
-     url(https://furamavietnam.com/wp-content/uploads/2018/07/Vietnam_Danang_Furama_Resort_Exterior_Beach.jpg);
-      background-size: cover; height: 100%">;
+<div class="container-fluid body" style="background-image:
+    url(https://furamavietnam.com/wp-content/uploads/2018/07/Vietnam_Danang_Furama_Resort_Exterior_Beach.jpg);
+      background-size: cover; height: 100%">
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

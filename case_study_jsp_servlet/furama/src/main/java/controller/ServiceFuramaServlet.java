@@ -1,9 +1,6 @@
 package controller;
 
-import model.person.Customer;
 import model.service_furama.Service;
-import service.customer.CustomerService;
-import service.customer.CustomerServiceImpl;
 import service.service_furama.ServiceFuramaService;
 import service.service_furama.ServiceFuramaServiceImpl;
 
@@ -42,7 +39,6 @@ public class ServiceFuramaServlet extends HttpServlet {
                 showServiceList(request, response);
         }
     }
-
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -93,24 +89,23 @@ public class ServiceFuramaServlet extends HttpServlet {
 //    private int status;
 
 
-
     private void create(HttpServletRequest request, HttpServletResponse response) {
 
-        String  idService = request.getParameter("idService");
-        String  serviceName = request.getParameter("serviceName");
-        int  serviceArea = Integer.parseInt(request.getParameter("serviceArea"));
-        double  serviceCost = Integer.parseInt(request.getParameter("serviceCost"));
-        int  serviceMaxpeople = Integer.parseInt(request.getParameter("serviceMaxpeople"));
-        String  standardRoom = request.getParameter("standardRoom");
-        String  descriptionOtherConvenience = request.getParameter("descriptionOtherConvenience");
-        double  poolArea = Double.parseDouble(request.getParameter("poolArea"));
-        int  numberOfFloors = Integer.parseInt(request.getParameter("numberOfFloors"));
-        int  rentTypeId = Integer.parseInt(request.getParameter("rentTypeId"));
-        int  serviceTypeId = Integer.parseInt(request.getParameter("serviceTypeId"));
+        String idService = request.getParameter("idService");
+        String serviceName = request.getParameter("serviceName");
+        int serviceArea = Integer.parseInt(request.getParameter("serviceArea"));
+        double serviceCost = Integer.parseInt(request.getParameter("serviceCost"));
+        int serviceMaxpeople = Integer.parseInt(request.getParameter("serviceMaxpeople"));
+        String standardRoom = request.getParameter("standardRoom");
+        String descriptionOtherConvenience = request.getParameter("descriptionOtherConvenience");
+        double poolArea = Double.parseDouble(request.getParameter("poolArea"));
+        int numberOfFloors = Integer.parseInt(request.getParameter("numberOfFloors"));
+        int rentTypeId = Integer.parseInt(request.getParameter("rentTypeId"));
+        int serviceTypeId = Integer.parseInt(request.getParameter("serviceTypeId"));
 
-        Service service = new Service(idService,serviceName,serviceArea,
-                serviceCost,serviceMaxpeople,standardRoom,descriptionOtherConvenience,
-                poolArea,numberOfFloors,rentTypeId,serviceTypeId);
+        Service service = new Service(idService, serviceName, serviceArea,
+                serviceCost, serviceMaxpeople, standardRoom, descriptionOtherConvenience,
+                poolArea, numberOfFloors, rentTypeId, serviceTypeId);
 
         furamaService.create(service);
 
@@ -131,7 +126,7 @@ public class ServiceFuramaServlet extends HttpServlet {
         request.setAttribute("serviceList", serviceList);
 
         try {
-            request.getRequestDispatcher("service/service.jsp").forward(request,response);
+            request.getRequestDispatcher("service/service.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
