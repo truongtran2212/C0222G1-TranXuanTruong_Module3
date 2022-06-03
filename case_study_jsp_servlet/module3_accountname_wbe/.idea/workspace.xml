@@ -20,115 +20,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f96ac3e-2bd5-4c21-9a09-7a3d90967b02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/controller/FilterUTF8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/webapp/user/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/controller/CustomerServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/controller/EmployeeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/controller/FuramaServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/model/person/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/model/person/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/repository/person/customer/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/repository/person/customer/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/repository/person/customer/CustomerRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/service/person/customer/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/service/person/customer/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/bootstrap-4.0.0-dist/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/customer/customer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/home-page/FuramaCSS.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/home-page/home_page_furama.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/EmployeeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/person/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/person/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/person/customer/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/person/customer/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/person/customer/CustomerRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/person/customer/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/person/customer/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/customer/customer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/furama_jsp/FuramaCSS.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/build/classes/java/main/service/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/build/classes/java/main/service/ProductServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/build/libs/product-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/build/libs/product-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/src/main/java/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/src/main/java/service/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/src/main/webapp/view/product/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../_11_mvc_model/exercise/product/src/main/webapp/view/product/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/controller/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/controller/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/repository/IUserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/repository/IUserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/repository/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/repository/UserRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/classes/java/main/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/libs/new_users-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/build/libs/new_users-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/controller/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/repository/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/repository/IUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/repository/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/java/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/webapp/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/webapp/user/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/webapp/user/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/webapp/user/search.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/webapp/user/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/new_users/src/main/webapp/user/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/users_management/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../_12_jdbc_and_crud/exercise/users_management/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furama/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/repository/person/employee/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/repository/person/employee/impl/EmployeeRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/service/person/employee/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furama/src/main/java/service/person/employee/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/test.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/view/customer/create-customer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furama/src/main/webapp/view/customer/update-customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/build/classes/java/main/controller/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/build/classes/java/main/controller/CustomerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/build/libs/furama-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/build/libs/furama-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/java/controller/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/java/controller/customer/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/java/controller/EmployeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/java/controller/employee/EmployeeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/java/controller/FuramaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/java/controller/furama/FuramaServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/java/controller/ServiceFuramaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/java/controller/furama_service/ServiceFuramaServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/java/model/person/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/java/model/person/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/java/service/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/java/service/person/customer/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/java/service/customer/CustomerTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/java/service/person/customer/CustomerTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/java/service/customer/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/java/service/person/customer/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/java/service/customer/impl/CustomerTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/java/service/person/customer/impl/CustomerTypeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/java/service/service_furama/ServiceFuramaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/java/service/service_furama/impl/ServiceFuramaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/webapp/customer/CustomerCSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/webapp/view/customer/CustomerCSS.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/webapp/customer/create-customer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/webapp/customer/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/webapp/view/customer/customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/webapp/customer/update-customer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/webapp/home_page/FuramaCSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/webapp/view/home_page/FuramaCSS.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/webapp/home_page/home-page-furama.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/webapp/view/home_page/home-page-furama.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/webapp/service/create-service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/webapp/view/furama_service/create-service.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../furama/src/main/webapp/service/service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../furama/src/main/webapp/view/furama_service/service.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/ServletFurama.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/ServletFurama.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/module3_accountname_wbe-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/module3_accountname_wbe-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ServletFurama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ServletFurama.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/furama_jsp/furama_login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/furama_jsp/furama_login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/furama_jsp/home_page_furama.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/furama_jsp/home_page_furama.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../furama/Furama.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama/Furama.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study_furama.sql" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_furama.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_furama.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data_furama.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,6 +223,7 @@
       <workItem from="1654171008808" duration="2459000" />
       <workItem from="1654176041212" duration="426000" />
       <workItem from="1654176540531" duration="822000" />
+      <workItem from="1654266452061" duration="638000" />
     </task>
     <servers />
   </component>

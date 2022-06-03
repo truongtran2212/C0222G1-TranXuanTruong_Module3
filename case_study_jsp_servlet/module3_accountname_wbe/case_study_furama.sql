@@ -111,7 +111,9 @@ pool_area double,
 number_of_floors int,
 rent_type_id int not null,
 service_type_id int not null,
+
 `status` bit DEFAULT 0,
+
 foreign key (rent_type_id) REFERENCES rent_type (rent_type_id),
 foreign key (service_type_id) REFERENCES service_type (service_type_id)
 );

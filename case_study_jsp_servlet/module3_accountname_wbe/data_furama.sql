@@ -26,7 +26,7 @@ values ('Sale-Marketing'),
 insert into customer_type
 (customer_type_name)
 values ('Diamond'),
-       ('Platinium'),
+       ('Platinum'),
        ('Gold'),
        ('Silver'),
        ('Member');

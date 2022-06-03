@@ -11,8 +11,9 @@
 <div class="container-fluid" style="background-color: #7FFFD4">
     <div class="row" style="display: flex">
         <div class="col-md-2">
-            <img src="https://kynghiviet.vn/public/upload/Tour/2020/FURAMA%20RESORT%20DA%20NANG/furama%20logo.png"
-                 height="100px" width="100%">
+            <a href="/furama"><img
+                    src="https://kynghiviet.vn/public/upload/Tour/2020/FURAMA%20RESORT%20DA%20NANG/furama%20logo.png"
+                    height="100px" width="100%"></a>
         </div>
         <div class="col-md-8"></div>
         <div class="col-md-2">
@@ -128,7 +129,9 @@
         </table>
     </div>
     <div style="text-align: center">
-        <a href="/customer/create-customer.jsp" ><button type="button" class="btn btn-primary">Add new</button></a>
+        <a href="/customer/create-customer.jsp">
+            <button type="button" class="btn btn-primary">Add new</button>
+        </a>
     </div>
 </div>
 </body>
