@@ -1,7 +1,7 @@
 package controller.customer;
 
-import model.person.Customer;
-import model.person.CustomerType;
+import model.person.customer.Customer;
+import model.person.customer.CustomerType;
 import service.person.customer.CustomerService;
 import service.person.customer.CustomerTypeService;
 import service.person.customer.impl.CustomerServiceImpl;
@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "CustomerServlet", urlPatterns = "/customer")
 public class CustomerServlet extends HttpServlet {
@@ -136,26 +137,43 @@ public class CustomerServlet extends HttpServlet {
 
 
     private void create(HttpServletRequest request, HttpServletResponse response) {
-        String idCustomer = request.getParameter("idCustomer");
-        String customerName = request.getParameter("customerName");
-        String birthday = request.getParameter("birthday");
-        int gender = Integer.parseInt(request.getParameter("gender"));
-        String idCard = request.getParameter("idCard");
-        String phone = request.getParameter("phone");
-        String email = request.getParameter("email");
-        String address = request.getParameter("address");
-        int customerTypeId = Integer.parseInt(request.getParameter("customerTypeId"));
+        if(customerService.findById(request.getParameter("idCustomer")) != null){
+            try {
+                request.setAttribute("mess", "Đã trùng id");
+                request.getRequestDispatcher("customer/create-customer.jsp").forward(request, response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
-        Customer customer = new Customer(idCustomer, customerName, birthday, gender, idCard, phone, email, address, customerTypeId);
-        customerService.create(customer);
-        try {
-            request.setAttribute("customer", customer);
-            request.setAttribute("mess", "Successful add new");
-            request.getRequestDispatcher("customer/create-customer.jsp").forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        Map<String, String> validate = customerService.create(request, response);
+
+        if (validate.isEmpty()){
+            List<Customer> customerList = customerService.findAll();
+            List<CustomerType> customerTypeList = customerTypeService.findAll();
+            String message = "Them moi thanh cong";
+            request.setAttribute("mess", message);
+            request.setAttribute("customerList", customerList);
+            request.setAttribute("customerTypeList", customerTypeList);
+
+            try {
+                request.getRequestDispatcher("customer/create-customer.jsp").forward(request, response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else {
+            try {
+                request.setAttribute("validate", validate);
+                request.getRequestDispatcher("customer/create-customer.jsp").forward(request, response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -201,7 +219,6 @@ public class CustomerServlet extends HttpServlet {
     private void showCustomerList(HttpServletRequest request, HttpServletResponse response) {
         List<Customer> customerList = customerService.findAll();
         List<CustomerType> customerTypeList = customerTypeService.findAll();
-
         request.setAttribute("customerList", customerList);
         request.setAttribute("customerTypeList", customerTypeList);
 

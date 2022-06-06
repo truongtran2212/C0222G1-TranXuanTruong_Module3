@@ -1,6 +1,6 @@
 package repository.person.customer.impl;
 
-import model.person.Customer;
+import model.person.customer.Customer;
 import repository.BaseRepository;
 import repository.person.customer.CustomerRepository;
 
@@ -27,12 +27,15 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     public List<Customer> findAll() {
         List<Customer> customerList = new ArrayList<>();
         Connection connection = BaseRepository.getConnectDB();
+
         try {
             PreparedStatement ps = connection.prepareStatement(SELECT_ALL);
             ResultSet resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
+
                 String idCustomer = resultSet.getString("customer_id");
+
                 String customerName = resultSet.getString("customer_name");
                 String birthday = resultSet.getString("customer_birthday");
                 int gender = resultSet.getInt("customer_gender");
@@ -55,9 +58,10 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
     public void create(Customer customer) {
         Connection connection = BaseRepository.getConnectDB();
-        try {
-            PreparedStatement ps = connection.prepareStatement(CREATE);
 
+        try {
+
+            PreparedStatement ps = connection.prepareStatement(CREATE);
             ps.setString(1, customer.getIdCustomer());
             ps.setString(2, customer.getCustomerName());
             ps.setString(3, customer.getBirthday());
@@ -67,6 +71,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
             ps.setString(7, customer.getEmail());
             ps.setString(8, customer.getAddress());
             ps.setInt(9, customer.getCustomerTypeId());
+
             ps.executeUpdate();
 
         } catch (SQLException throwables) {

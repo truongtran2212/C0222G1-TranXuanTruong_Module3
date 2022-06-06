@@ -46,7 +46,7 @@
 
     <div class="center container">
         <h1 style="text-align: center">Danh sách khách hàng</h1>
-
+        <c:if test="${message != null}">${message}</c:if>
         <table border="1" style="border-collapse:  collapse; margin-left: 40px; width: 100%">
             <tr>
                 <th>Id Customer</th>

@@ -1,6 +1,6 @@
 package repository.person.customer;
 
-import model.person.Customer;
+import model.person.customer.Customer;
 
 import java.util.List;
 

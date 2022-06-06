@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: ASUS
-  Date: 6/3/2022
-  Time: 9:42 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -45,13 +38,13 @@
 
                 <div class="form-group">
                     <label>Day Of Birth</label>
-                    <input class="form-control" type="text" name="birthday"
+                    <input class="form-control" type="date" name="birthday"
                            value="${requestScope["customer"].getBirthday()}">
                 </div>
 
                 <div class="form-group">
                     <label>Gender</label>
-                    <select name="gender" class="w-100 form-control"  value="${requestScope["customer"].getGender()}">
+                    <select name="gender" class="w-100 form-control" value="${requestScope["customer"].getGender()}">
                         <option value="1" class="w-100">Nam</option>
                         <option value="0" class="w-100">Nữ</option>
                     </select>
@@ -79,9 +72,10 @@
                            value="${requestScope["customer"].getAddress()}">
                 </div>
 
-                <div class="form-group" >
+                <div class="form-group">
                     <label>Customer type id</label>
-                    <select name="customerTypeId" class="w-100 form-control" value="${requestScope["customer"].getCustomerTypeId()}">
+                    <select name="customerTypeId" class="w-100 form-control"
+                            value="${requestScope["customer"].getCustomerTypeId()}">
                         <option value="1" class="w-100">Diamond</option>
                         <option value="2" class="w-100">Platinum</option>
                         <option value="3" class="w-100">Gold</option>

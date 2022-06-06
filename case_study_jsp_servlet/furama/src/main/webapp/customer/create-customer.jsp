@@ -29,17 +29,21 @@
             <div class="p-3">
                 <div class="form-group">
                     <label>Id Customer</label>
-                    <input class="form-control" type="text" name="idCustomer">
+                    <input class="form-control" type="text" name="idCustomer" required>
+                    <c:if test="${validate.get('idCustomer') != null}">
+                        ${validate.get('idCustomer')}
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>Customer Name</label>
-                    <input class="form-control" type="text" name="customerName">
+                    <input class="form-control" type="text" name="customerName" required>
                 </div>
 
                 <div class="form-group">
                     <label>Day Of Birth</label>
-                    <input class="form-control" type="text" name="birthday">
+                    <input class="form-control" type="date" name="birthday" required>
+
                 </div>
 
                 <div class="form-group">
@@ -48,26 +52,38 @@
                         <option value="1" class="w-100">Nam</option>
                         <option value="0" class="w-100">Nữ</option>
                     </select>
+                    <c:if test="${validate.get('gender') != null}">
+                        ${validate.get('gender')}
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>Id Card</label>
                     <input class="form-control" type="text" name="idCard">
+                    <c:if test="${validate.get('idCard') != null}">
+                        ${validate.get('idCard')}
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>Phone</label>
-                    <input class="form-control" type="text" name="phone">
+                    <input class="form-control" type="text" name="phone" required>
+                    <c:if test="${validate.get('phone') != null}">
+                        ${validate.get('phone')}
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="text" name="email">
+                    <input class="form-control" type="email" name="email" required>
+                    <c:if test="${validate.get('email') != null}">
+                        ${validate.get('email')}
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>Address</label>
-                    <input class="form-control" type="text" name="address">
+                    <input class="form-control" type="text" name="address" required>
                 </div>
 
                 <div class="form-group">
@@ -79,13 +95,15 @@
                         <option value="4" class="w-100">Silver</option>
                         <option value="5" class="w-100">Member</option>
                     </select>
+                    <c:if test="${validate.get('customerTypeId') != null}">
+                        ${validate.get('customerTypeId')}
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>Status</label>
-                    <input class="form-control" type="text" name="status">
+                    <input class="form-control" type="hidden" name="status" required>
                 </div>
-
                 <button class="btn btn-dark" type="submit">Add new</button>
             </div>
         </form>

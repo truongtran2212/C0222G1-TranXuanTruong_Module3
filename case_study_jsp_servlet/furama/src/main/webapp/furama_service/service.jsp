@@ -98,7 +98,6 @@
                                             <a href="/service?action=delete&idService=${service.idService}">
                                                 <button type="button" class="btn btn-primary">delete</button>
                                             </a>
-
                                         </div>
                                     </div>
                                 </div>

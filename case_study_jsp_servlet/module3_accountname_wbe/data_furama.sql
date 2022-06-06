@@ -46,6 +46,11 @@ values ('Villa'),
        ('House'),
        ('Room');
        
+INSERT into `role` (role_name) 
+values("admin"),
+       ("user");
+        
+        
         
 insert into attach_service
 (attach_service_name, attach_service_cost, attach_service_unit, attach_service_status)
@@ -56,29 +61,56 @@ values ('Karaoke', 10000, 'giờ', 'tiện nghi, hiện tại'),
        ('Buffet buổi trưa', 90000, 'suất', 'đầy đủ đồ ăn, tráng miệng'),
        ('Buffet buổi tối', 16000, 'suất', 'đầy đủ đồ ăn, tráng miệng');
        
+INSERT into `user` 
+values
+ ("annguyen@furama.com","annguyen123"),
+ ("binhlv@furama.com","binhlv123"),
+ ("thiyen@furama.com","thiyen123"),
+ ("toan0404@furama.com","toan0404"),
+ ("phatphat@furama.com","phatphat123"),
+ ("annghi20@furama.com","annghi20"),
+ ("nhh0101@furama.com","nhh0101"),
+ ("donghanguyen@furama.com","donghanguyen123"),
+ ("hoangtong@furama.com","hoangtong123"),
+ ("nguyencongdao12@furama.com","nguyencongdao123");
        
+       
+       
+ insert into user_role 
+ values (1,"annguyen@furama.com"),
+ (2,"binhlv@furama.com"),
+  (1,"thiyen@furama.com"),
+ (1,"toan0404@furama.com"),
+ (2,"phatphat@furama.com"),
+  (2,"annghi20@furama.com"),
+ (2,"nhh0101@furama.com"),
+ (1,"donghanguyen@furama.com"),
+ (1,"hoangtong@furama.com"),
+ (2,"nguyencongdao12@furama.com");
+ 
+ 
 insert into employee
-(employee_name, employee_birthday, employee_id_card, employee_salary, employee_phone, employee_email, employee_address, position_id, education_degree_id, division_id)
+(employee_name, employee_birthday, employee_id_card, employee_salary, employee_phone, employee_email, employee_address, position_id, education_degree_id, division_id,username)
 values ('Nguyễn Văn An', '1970-11-07', '456231786', 10000000, '0901234121', 'annguyen@gmail.com',
-        '295 Nguyễn Tất Thành, Đà Nẵng', 1, 3, 1),
+        '295 Nguyễn Tất Thành, Đà Nẵng', 1, 3, 1,"annguyen@furama.com"),
        ('Lê Văn Bình', '1997-04-09', '654231234', 7000000, '0934212314', 'binhlv@gmail.com', '22 Yên Bái, Đà Nẵng', 1,
-        2, 2),
+        2, 2,"binhlv@furama.com"),
        ('Hồ Thị Yến', '1995-12-12', '999231723', 14000000, '0412352315', 'thiyen@gmail.com',
-        'K234/11 Điện Biên Phủ, Gia Lai', 1, 3, 2),
+        'K234/11 Điện Biên Phủ, Gia Lai', 1, 3, 2,"thiyen@furama.com"),
        ('Võ Công Toản', '1980-04-04', '123231365', 17000000, '0374443232', 'toan0404@gmail.com',
-        '77 Hoàng Diệu, Quảng Trị', 1, 4, 4),
+        '77 Hoàng Diệu, Quảng Trị', 1, 4, 4,"toan0404@furama.com"),
        ('Nguyễn Bỉnh Phát', '1999-12-09', '454363232', 6000000, '0902341231', 'phatphat@gmail.com',
-        '43 Yên Bái, Đà Nẵng', 2, 1, 1),
+        '43 Yên Bái, Đà Nẵng', 2, 1, 1,"phatphat@furama.com"),
        ('Khúc Nguyễn An Nghi', '2000-11-08', '964542311', 7000000, '0978653213', 'annghi20@gmail.com',
-        '294 Nguyễn Tất Thành, Đà Nẵng', 2, 2, 3),
+        '294 Nguyễn Tất Thành, Đà Nẵng', 2, 2, 3,"annghi20@furama.com"),
        ('Nguyễn Hữu Hà', '1993-01-01', '534323231', 8000000, '0941234553', 'nhh0101@gmail.com',
-        '4 Nguyễn Chí Thanh, Huế', 2, 3, 2),
+        '4 Nguyễn Chí Thanh, Huế', 2, 3, 2,"nhh0101@furama.com"),
        ('Nguyễn Hà Đông', '1989-09-03', '234414123', 9000000, '0642123111', 'donghanguyen@gmail.com',
-        '111 Hùng Vương, Hà Nội', 2, 4, 4),
+        '111 Hùng Vương, Hà Nội', 2, 4, 4,"donghanguyen@furama.com"),
        ('Tòng Hoang', '1982-09-03', '256781231', 6000000, '0245144444', 'hoangtong@gmail.com', '213 Hàm Nghi, Đà Nẵng',
-        2, 4, 4),
+        2, 4, 4,"hoangtong@furama.com"),
        ('Nguyễn Công Đạo', '1994-01-08', '755434343', 8000000, '0988767111', 'nguyencongdao12@gmail.com',
-        '6 Hoà Khánh, Đồng Nai', 2, 3, 2);
+        '6 Hoà Khánh, Đồng Nai', 2, 3, 2,"nguyencongdao12@furama.com");
         
         
 insert into customer
@@ -142,3 +174,5 @@ values (5, 2, 4),
        (1, 1, 3),
        (2, 1, 2),
        (2, 12, 2);
+       
+

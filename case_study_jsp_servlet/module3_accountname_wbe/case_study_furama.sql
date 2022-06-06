@@ -33,6 +33,7 @@ role_name varchar(255)
 create table user_role (
 role_id int ,
 username varchar (255),
+PRIMARY KEY (role_id, username),
 
 foreign key (role_id) REFERENCES `role`(role_id),
 foreign key (username) REFERENCES `user` (username)
@@ -54,7 +55,6 @@ position_id int not null,
 education_degree_id int not null,
 division_id int not null,
 username varchar (255),
-
 
 `status` bit DEFAULT 0,
 

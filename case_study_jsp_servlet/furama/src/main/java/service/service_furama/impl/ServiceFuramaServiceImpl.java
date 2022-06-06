@@ -1,6 +1,5 @@
 package service.service_furama.impl;
 
-import model.person.Customer;
 import model.service_furama.Service;
 import repository.service_furama.ServiceFuramaRepository;
 import repository.service_furama.ServiceFuramaRepositoryImpl;
