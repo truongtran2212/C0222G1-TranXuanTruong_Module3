@@ -19,7 +19,7 @@ id int AUTO_INCREMENT PRIMARY key,
 );
 
 create table `user`(
-name varchar (255) PRIMARY key,
+`name` varchar (255) PRIMARY key,
 `password` varchar(255) 
 );
 
@@ -139,3 +139,6 @@ values ('Nguyễn Văn An', '1970-11-07', '456231786', 10000000, '0901234121', '
         2, 4, 4,"hoangtong@furama.com"),
        ('Nguyễn Công Đạo', '1994-01-08', '755434343', 8000000, '0988767111', 'nguyencongdao12@gmail.com',
         '6 Hoà Khánh, Đồng Nai', 2, 3, 2,"nguyencongdao12@furama.com");
+
+insert  into employee (`name`, birthday, id_card, salary, phone, email, address, position_id, education_degree_id, division_id, username)
+values (?,?,?,?,?,?,?,?,?,?,?);

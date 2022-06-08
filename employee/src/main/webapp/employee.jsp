@@ -7,6 +7,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css">
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css">
+    <script src="https://kit.fontawesome.com/dbc3483aca.js" crossorigin="anonymous"></script>
     <style>
         .center-box {
             display: flex;
@@ -23,6 +24,12 @@
         .content {
             height: 90%;
         }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
     </style>
 </head>
 <body class="h-100">
@@ -33,7 +40,7 @@
 <div class="container-fluid content">
     <div class="row h-100">
         <div class="col-md-1">&nbsp;</div>
-        <div class="col-md-10 h-100 bg-primary center-box">
+        <div class="col-md-10 h-100" style="border: 1px solid black">
             <table class="table text-center table-striped table-hover bg-white" id="tableEmployee">
                 <thead>
                 <tr>
@@ -79,10 +86,10 @@
                                 </c:if>
                             </c:forEach>
                             <td>
-                                <a href="/employee?action=edit&id=${employee.id}">Edit</a>
+                                <a href="/employee?action=update&id=${employee.id}">Edit</a>
                             </td>
                             <td>
-                                <a href="#" onclick="employeeIndex(${employee.id})" data-toggle="modal"
+                                <a href="#" onclick="employeeIndex(${employee.id}, '${employee.name}')" data-toggle="modal"
                                    data-target="#delete">
                                     Delete
                                 </a>
@@ -90,29 +97,36 @@
                         </tr>
                     </c:if>
                 </c:forEach>
-                <c:if test="${message!=null}">
-                    <tr>
-                        <th colspan="11" class="text-primary">
-                            ${message}
-
-                        </th>
-
-                    </tr>
-
-                </c:if>
                 </tbody>
             </table>
+            <div>
+
+                <div class="w-100  footer" style="color: #b21f2d; font-size: 2rem">
+                    <button><a href="/employee?action=create"><i class="fa-solid fa-plus"></i></a></button>
+
+                    <button><a href="#" data-toggle="modal"
+                               data-target="#search"><i class="fa-solid fa-magnifying-glass"></i></a></button>
+                </div>
+
+                <div style="text-align: center; color: #28a745; font-size: 1.5rem">
+                    <c:if test="${message!=null}">
+                        ${message}
+                    </c:if>
+                </div>
+            </div>
+
         </div>
+
         <div class="col-md-1">&nbsp;</div>
     </div>
 </div>
 
-<%--modal--%>
+<%--modal delete--%>
 <div class="modal" id="delete">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title w-100 text-center">Bạn có muốn xóa nhân viên</h4>
+                    <h4 class="modal-title w-100 text-center" id="name"></h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-footer">
@@ -122,6 +136,37 @@
                 <button type="button" class="btn btn-dark " data-dismiss="modal">Hủy</button>
             </div>
         </div>
+    </div>
+</div>
+
+
+<%--modal search--%>
+
+<div class="modal" id="search">
+    <div class="modal-dialog">
+        <form action="/employee?action=search" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100 text-center">Chọn thuộc tính bạn muốn tìm kiếm</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body footer border- 0">
+                    <input type="text" name="nameSearch" placeholder="Tên nhân viên" class="form-control">
+                    <select name="divisionIdSearch" class="form-control custom-select bg-light">
+                        <option value="">Bộ phận</option>
+                        <c:forEach items="${divisionList}" var="division">
+                            <option value="${division.id}">${division.name}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="submit" class="btn btn-dark">
+                        Tìm kiếm
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 </body>
@@ -136,6 +181,20 @@
 <script src="bootstrap413/js/bootstrap.bundle.min.js"></script>
 
 <script>
+    var id;
+
+    function employeeIndex(index, employeeName) {
+        id = index;
+        document.getElementById("name").innerHTML = "Bạn có muốn xóa nhân viên tên \n"+ employeeName;
+    };
+
+    function employeeIndex2() {
+        let link = "/employee?action=delete&id=" + id;
+        window.location.href = link;
+    };
+</script>
+
+<script>
     $(document).ready(function () {
         $('#tableEmployee').dataTable({
             "dom": 'lrtip',
@@ -143,17 +202,5 @@
             "pageLength": 4
         });
     })
-</script>
-
-<script>
-    var id;
-    function employeeIndex(index) {
-        id = index;
-    };
-
-    function employeeIndex2() {
-        let link = "/employee?action=delete&id=" + id;
-        window.location.href = link;
-    };
 </script>
 </html>

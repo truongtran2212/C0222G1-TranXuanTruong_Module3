@@ -20,7 +20,6 @@ public class EducationRepoImpl implements EducationRepo {
     @Override
     public List<Education> findAll() {
 
-
         List<Education> educationList = new ArrayList<>();
         Connection connection = BaseRepository.getConnectDB();
         try {

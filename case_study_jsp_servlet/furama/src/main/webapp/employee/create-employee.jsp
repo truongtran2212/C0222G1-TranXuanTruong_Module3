@@ -27,92 +27,159 @@
             </c:if>
             <a href="/employee" style="font-size: 2rem">Back list Employee</a>
             <div class="p-3">
-
+                <h4 style="text-align: center">Thêm mới nhân viên</h4>
                 <div class="form-group">
                     <label>Employee Name</label>
-                    <input class="form-control" type="text" name="name" required>
+                    <input class="form-control" type="text" name="name">
+
+
+                    <%--              name ở đây là key của Map<>--%>
+                    <%--                    Map<> có thể . thẳng key giống như thuộc tính--%>
+                    <c:if test="${validate.name != null}">
+                        <label class="text-danger"> ${validate.name}</label>
+
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>Day Of Birth</label>
-                    <input class="form-control" type="date" name="birthday" required>
-                </div>
+                    <input class="form-control" type="date" name="birthday">
 
+                    <%--                    birthday ở đây là key của Map<>--%>
+                    <%--                    Map<> có thể . thẳng key giống như thuộc tính--%>
+                    <c:if test="${validate.birthday != null}">
+                        <label class="text-danger"> ${validate.birthday}</label>
 
-                <div class="form-group">
-                    <label>Id Card</label>
-                    <input class="form-control" type="text" name="idCard" required
-                    pattern="^[0-9]{9}|[0-9]{12}$"
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label>Salary</label>
-                    <input class="form-control" type="text" name="salary" required>
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>Phone</label>
-                    <input class="form-control" type="text" name="phone" required
-                    pattern="^(090[0-9]{7})|(091[0-9]{7})|(\(84\)\+90[0-9]{7})|(\(84\)\+91[0-9]{7})$"
-                    >
-                </div>
+                    <input class="form-control" type="text" name="phone">
 
-                <div class="form-group">
-                    <label>Email</label>
-                    <input class="form-control" type="email" name="email" required
-                    pattern="^(([^<>()\\[\\]\\\\.,;:\\s@\']+(\\.[^<>()\\[\\]\\\\.,;:\\s@\']+)*)|(\'.+\'))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$"
-                    >
+                    <%--                    phone ở đây là key của Map<>--%>
+                    <%--                    Map<> có thể . thẳng key giống như thuộc tính--%>
+                    <c:if test="${validate.phone != null}">
+                        <label class="text-danger"> ${validate.phone}</label>
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>Address</label>
-                    <input class="form-control" type="text" name="address" required>
+                    <input class="form-control" type="text" name="address">
+                    <%--                    address ở đây là key của Map<>--%>
+                    <%--                    Map<> có thể . thẳng key giống như thuộc tính--%>
+                    <c:if test="${validate.address != null}">
+                        <label class="text-danger"> ${validate.address}</label>
+                    </c:if>
+                </div>
+
+                <div class="form-group">
+                    <label>Salary</label>
+                    <input class="form-control" type="text" name="salary">
+                    <%--                    salary ở đây là key của Map<>--%>
+                    <%--                    Map<> có thể . thẳng key giống như thuộc tính--%>
+
+                    <c:if test="${validate.salary != null}">
+                        <label class="text-danger"> ${validate.salary}</label>
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>Position Id</label>
                     <select name="positionId" class="w-100 form-control">
-                        <option value="1" class="w-100">Quản lý</option>
-                        <option value="2" class="w-100">Nhân viên</option>
+                        <option value="" class="w-100">Vị trí</option>
+                        <c:forEach items="${positionList}" var="position">
+                            <option value="${position.id}" class="w-100">${position.name}</option>
+                        </c:forEach>
                     </select>
+
+                    <%--                    positionId ở đây là key của map--%>
+                    <%--                    map có thể . thẳng key giống như thuộc tính--%>
+
+
+                    <c:if test="${validate.positionId != null}">
+                        <label class="text-danger"> ${validate.positionId}</label>
+                    </c:if>
                 </div>
 
-                <div class="form-group">
-                    <label>Education Degree Id</label>
-                    <select name="educationDegreeId" class="w-100 form-control">
-                        <option value="1" class="w-100">Trung Cấp</option>
-                        <option value="2" class="w-100">Cao Đẳng</option>
-                        <option value="3" class="w-100">Đại Học</option>
-                        <option value="4" class="w-100">Sau Đại Học</option>
-                    </select>
-                </div>
 
                 <div class="form-group">
                     <label>Division Id</label>
                     <select name="divisionId" class="w-100 form-control">
-                        <option value="1" class="w-100">Sale-Marketing</option>
-                        <option value="2" class="w-100">Hành chính</option>
-                        <option value="3" class="w-100">Phục vụ</option>
-                        <option value="4" class="w-100">Quản lý</option>
+                        <option value="" class="w-100">Bộ phận</option>
+                        <c:forEach items="${divisionList}" var="division">
+                            <option value="${division.id}" class="w-100">${division.name}</option>
+                        </c:forEach>
                     </select>
+
+                    <%--                    divisionId ở đây là key của Map<>--%>
+                    <%--                    Map<> có thể . thẳng key giống như thuộc tính--%>
+                    <c:if test="${validate.divisionId!= null}">
+                        <label class="text-danger"> ${validate.divisionId}</label>
+                    </c:if>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Id Card</label>
+                    <input class="form-control" type="text" name="idCard">
+
+                    <%--                    idCard ở đây là key của Map<>--%>
+                    <%--                    Map<> có thể . thẳng key giống như thuộc tính--%>
+                    <c:if test="${validate.idCard!= null}">
+                        <label class="text-danger"> ${validate.idCard}</label>
+                    </c:if>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" type="email" name="email">
+                    <%--                    email ở đây là key của Map<>--%>
+                    <%--                    Map<> có thể . thẳng key giống như thuộc tính--%>
+                    <c:if test="${validate.email != null}">
+                        <label class="text-danger"> ${validate.email}</label>
+                    </c:if>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Education Degree Id</label>
+                    <select name="educationDegreeId" class="w-100 form-control">
+                        <option value="" class="w-100">Học vấn</option>
+                        <c:forEach items="${educationList}" var="education">
+                            <option value="${education.id}" class="w-100">${education.name}</option>
+                        </c:forEach>
+                    </select>
+                    <%--                    educationDegreeId ở đây là key của Map<>--%>
+                    <%--                    Map<> có thể . thẳng key giống như thuộc tính--%>
+                    <c:if test="${validate.educationDegreeId != null}">
+                        <label class="text-danger"> ${validate.educationDegreeId}</label>
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>User Name</label>
-                    <input class="form-control" type="text" name="userName" required
-                           placeholder="inputsomething@furama.com.vn"
-                    pattern="^[a-zA-Z0-9]{8,}@furama.com.vn$"
-                    >
+                    <input class="form-control" type="text" name="userName"
+                           placeholder="inputsomething@furama.com.vn">
+
+                    <%--                    userName ở đây là key của Map<>--%>
+                    <%--                    Map<> có thể . thẳng key giống như thuộc tính--%>
+                    <c:if test="${validate.userName != null}">
+                        <label class="text-danger"> ${validate.userName}</label>
+                    </c:if>
                 </div>
 
                 <div class="form-group">
                     <label>Password</label>
-                    <input class="form-control" type="password" name="password" required
-                           pattern="^[a-zA-Z0-9]{8,}$" placeholder="Phải trên 8 kí tự (Không bao gồm kí tự đặc biệt)"
-                    >
+                    <input class="form-control" type="password" name="password">
+                    <%--                    password ở đây là key của Map<>--%>
+                    <%--                    Map<> có thể . thẳng key giống như thuộc tính--%>
+                    <c:if test="${validate.password!= null}">
+                        <label class="text-danger"> ${validate.password}</label>
+                    </c:if>
                 </div>
-
                 <button class="btn btn-dark" type="submit">Add new</button>
             </div>
         </form>

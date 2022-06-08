@@ -22,17 +22,17 @@
     </div>
 </div>
 
-<div class="container-fluid body"
-     style="background-image:
-     url(https://furamavietnam.com/wp-content/uploads/2018/07/Vietnam_Danang_Furama_Resort_Exterior_Beach.jpg);
-      background-size: cover; height: 100%">
+<div class="container-fluid body">
+<%--     style="background-image:--%>
+<%--     url(https://furamavietnam.com/wp-content/uploads/2018/07/Vietnam_Danang_Furama_Resort_Exterior_Beach.jpg);--%>
+<%--      background-size: cover; height: 100%">--%>
 
 
     <div>
         <form action="/customer" method="get">
 
             <input type="hidden" name="action" value="search">
-            <input type="text" name="name" placeholder="nhập tên">
+            <input type="text" name="name" placeholder="nhập tên khách hàng">
             <select name="id">
                 <option value="">Select Customer Type</option>
                 <c:forEach items="${customerTypeList}" var="customerType">
@@ -103,14 +103,14 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Are you sure</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
 
-                                            <p>You want delete</p>
+                                            <p>You want delete ${customer.customerName}</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -129,7 +129,7 @@
         </table>
     </div>
     <div style="text-align: center">
-        <a href="/customer/create-customer.jsp">
+        <a href="/customer?action=create">
             <button type="button" class="btn btn-primary">Add new</button>
         </a>
     </div>

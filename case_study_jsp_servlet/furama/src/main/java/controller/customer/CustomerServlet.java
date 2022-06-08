@@ -125,6 +125,10 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void showFormCreate(HttpServletRequest request, HttpServletResponse response) {
+        List<Customer> customerList = customerService.findAll();
+        List<CustomerType> customerTypeList = customerTypeService.findAll();
+        request.setAttribute("customerList", customerList);
+        request.setAttribute("customerTypeList", customerTypeList);
         try {
             request.getRequestDispatcher("customer/create-customer.jsp").forward(request, response);
         } catch (ServletException e) {
@@ -167,6 +171,11 @@ public class CustomerServlet extends HttpServlet {
             }
         }else {
             try {
+                List<Customer> customerList = customerService.findAll();
+                List<CustomerType> customerTypeList = customerTypeService.findAll();
+
+                request.setAttribute("customerList", customerList);
+                request.setAttribute("customerTypeList", customerTypeList);
                 request.setAttribute("validate", validate);
                 request.getRequestDispatcher("customer/create-customer.jsp").forward(request, response);
             } catch (ServletException e) {
@@ -188,9 +197,6 @@ public class CustomerServlet extends HttpServlet {
         String email = request.getParameter("email");
         String address = request.getParameter("address");
         int customerTypeId = Integer.parseInt(request.getParameter("customerTypeId"));
-
-
-//        Customer customer = new Customer(idCustomer,customerName,birthday,gender,idCard,phone,email,address,customerTypeId);
 
         Customer customer = customerService.findById(idCustomer);
 

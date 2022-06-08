@@ -32,15 +32,25 @@ public class CustomerServiceImpl implements CustomerService {
         Map<String, String> map = new LinkedHashMap<>();
 
 
-
         String idCustomer = request.getParameter("idCustomer");
         if (!idCustomer.matches(CUSTOMER_ID)) {
             map.put("idCustomer", "Sai dinh dang, Mã Khách hàng có định dạng là KH-XXXX (X là số từ 0-9)");
+        }if(idCustomer.equals("")){
+            map.put("idCustomer", "Không dược bỏ trống");
         }
 
         String customerName = request.getParameter("customerName");
 
+        if(customerName.equals("")){
+            map.put("customerName", "Không dược bỏ trống");
+        }
+
+
         String birthday = request.getParameter("birthday");
+
+        if(birthday.equals("")){
+            map.put("birthday", "Không dược bỏ trống");
+        }
 
         int gender = 0;
         try {
@@ -58,21 +68,33 @@ public class CustomerServiceImpl implements CustomerService {
         if (!idCard.matches(ID_CARD)) {
             map.put("idCard", "Số CMND phải đúng định dạng XXXXXXXXX hoặc XXXXXXXXXXXX (X là số 0-9)");
         }
+        if(idCard.equals("")){
+            map.put("idCard", "Không dược bỏ trống");
+        }
+
 
 
         String phone = request.getParameter("phone");
         if (!phone.matches(PHONE)) {
             map.put("phone", "Sai dinh dang,Số điện thoại phải đúng định dạng 090xxxxxxx " +
                     "hoặc 091xxxxxxx hoặc (84)+90xxxxxxx hoặc (84)+91xxxxxxx (X là số 0-9)");
+        } if(idCard.equals("")){
+            map.put("phone", "Không dược bỏ trống");
         }
 
 
         String email = request.getParameter("email");
         if(!email.matches(EMAIL)){
             map.put("email","Định dạng đúng là inputsomething@gmail.com");
+        }if(idCard.equals("")){
+            map.put("email", "Không dược bỏ trống");
         }
 
         String address = request.getParameter("address");
+        if(idCard.equals("")){
+            map.put("address", "Không dược bỏ trống");
+        }
+
 
         int customerTypeId = 0;
 
@@ -82,7 +104,7 @@ public class CustomerServiceImpl implements CustomerService {
                 map.put("customerTypeId", "Chỉ được nhập từ 1 đến 5");
             }
         } catch (NumberFormatException o) {
-            map.put("customerTypeId", "Không được nhập chữ hoặc để trống hoặc nhập chữ");
+            map.put("customerTypeId", "Không được nhập chữ hoặc để trống");
         }
 
         if (map.isEmpty()) {

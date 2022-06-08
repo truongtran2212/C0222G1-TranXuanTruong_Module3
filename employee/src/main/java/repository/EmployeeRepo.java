@@ -10,9 +10,11 @@ public interface EmployeeRepo {
 
     List<Employee> findAll();
 
-    void save(Employee employee);
+    void create(Employee employee);
 
-    void update(int id);
+    void update(Employee employee);
 
     void delete(int id);
+
+    List<Employee> search (String nameSearch, String divisionIdSearch);
 }

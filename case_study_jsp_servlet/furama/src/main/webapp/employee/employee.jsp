@@ -22,10 +22,7 @@
     </div>
 </div>
 
-<div class="container-fluid body"
-     style="background-image:
-     url(https://furamavietnam.com/wp-content/uploads/2018/07/Vietnam_Danang_Furama_Resort_Exterior_Beach.jpg);
-      background-size: cover; height: 100%">
+<div class="container-fluid body">
 
     <div>
         <form action="/employee" method="get">
@@ -141,7 +138,7 @@
         </table>
     </div>
     <div style="text-align: center">
-        <a href="/employee/create-employee.jsp">
+        <a href="/employee?action=create">
             <button type="button" class="btn btn-primary">Add new</button>
         </a>
     </div>

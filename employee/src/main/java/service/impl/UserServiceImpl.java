@@ -1,5 +1,6 @@
 package service.impl;
 
+import model.Employee;
 import model.User;
 import repository.UserRepo;
 import repository.impl.UserRepoImpl;
@@ -14,5 +15,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAll() {
         return userRepo.findAll();
+    }
+
+    @Override
+    public void create(User user) {
+        userRepo.create(user);
     }
 }

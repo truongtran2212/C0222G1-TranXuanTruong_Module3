@@ -14,6 +14,7 @@ import java.util.List;
 public class CustomerTypeRepositoryImpl implements CustomerTypeRepository {
 
     private static final String SELECT_ALL = "select * from customer_type;";
+    private static final String CREATE = "insert into customer_type values (?,?);";
 
     @Override
     public List<CustomerType> findAll() {
@@ -23,6 +24,7 @@ public class CustomerTypeRepositoryImpl implements CustomerTypeRepository {
             PreparedStatement ps = connection.prepareStatement(SELECT_ALL);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
+                // kiểu dữ liệu của DB
                 int id = resultSet.getInt("customer_type_id");
                 String name = resultSet.getString("customer_type_name");
 
@@ -32,5 +34,19 @@ public class CustomerTypeRepositoryImpl implements CustomerTypeRepository {
             throwables.printStackTrace();
         }
         return customerTypeList;
+    }
+
+    @Override
+    public void create(CustomerType customerType) {
+        Connection connection  = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement ps = connection.prepareStatement(CREATE);
+            // kiểu dữ liệu của java
+            ps.setInt(1,customerType.getId());
+            ps.setString(2,customerType.getName());
+            ps.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

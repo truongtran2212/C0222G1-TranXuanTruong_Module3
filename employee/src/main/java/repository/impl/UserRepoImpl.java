@@ -1,5 +1,6 @@
 package repository.impl;
 
+import model.Employee;
 import model.Position;
 import model.User;
 import repository.UserRepo;
@@ -31,5 +32,22 @@ public class UserRepoImpl  implements UserRepo {
             throwables.printStackTrace();
         }
         return userList;
+    }
+
+    @Override
+    public void create(User user) {
+
+        String create = "insert into `user` values (?,?)";
+        Connection connection = BaseRepository.getConnectDB();
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(create);
+            ps.setString(1,user.getName());
+            ps.setString(2,user.getPassword());
+            ps.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
     }
 }

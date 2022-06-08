@@ -2,12 +2,9 @@ package controller.employee;
 
 import model.person.customer.Customer;
 import model.person.customer.CustomerType;
-import model.person.employee.Employee;
-import model.person.employee.User;
-import service.person.employee.EmployeeService;
-import service.person.employee.UserService;
-import service.person.employee.impl.EmployeeServiceImpl;
-import service.person.employee.impl.UserServiceImpl;
+import model.person.employee.*;
+import service.person.employee.*;
+import service.person.employee.impl.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,11 +13,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "EmployeeServlet", urlPatterns = "/employee")
 public class EmployeeServlet extends HttpServlet {
     EmployeeService employeeService = new EmployeeServiceImpl();
     UserService userService = new UserServiceImpl();
+    EducationService educationService = new EducationServiceImpl();
+    PositionService positionService = new PositionServiceImpl();
+    DivisionService divisionService = new DivisionServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -73,6 +74,16 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void showFormCreate(HttpServletRequest request, HttpServletResponse response) {
+        List<Employee> employeeList = employeeService.findAll();
+        List<Division> divisionList = divisionService.findAll();
+        List<Position> positionList = positionService.findAll();
+        List<Education> educationList = educationService.findAll();
+
+
+        request.setAttribute("employeeList", employeeList);
+        request.setAttribute("divisionList", divisionList);
+        request.setAttribute("positionList", positionList);
+        request.setAttribute("educationList", educationList);
         try {
             request.getRequestDispatcher("employee/create-employee.jsp").forward(request,response);
         } catch (ServletException e) {
@@ -83,44 +94,65 @@ public class EmployeeServlet extends HttpServlet {
 
     }
     private void create(HttpServletRequest request, HttpServletResponse response) {
+        Map<String, String> validate = employeeService.create(request, response);
+
+        if (validate.isEmpty()) {
+            String message = "Thêm mới thành công";
+            List<Employee> employeeList = employeeService.findAll();
+            List<Division> divisionList = divisionService.findAll();
+            List<Position> positionList = positionService.findAll();
+            List<Education> educationList = educationService.findAll();
 
 
-        String name = request.getParameter("name");
-        String birthday = request.getParameter("birthday");
-        String idCard = request.getParameter("idCard");
-        double salary = Double.parseDouble(request.getParameter("salary"));
-        String phone = request.getParameter("phone");
-        String email = request.getParameter("email");
-        String address = request.getParameter("address");
-        int positionId = Integer.parseInt(request.getParameter("positionId"));
-        int educationDegreeId = Integer.parseInt(request.getParameter("educationDegreeId"));
-        int divisionId = Integer.parseInt(request.getParameter("divisionId"));
-        String userName = request.getParameter("userName");
-        String password = request.getParameter("password");
+            request.setAttribute("employeeList", employeeList);
+            request.setAttribute("divisionList", divisionList);
+            request.setAttribute("positionList", positionList);
+            request.setAttribute("educationList", educationList);
+            request.setAttribute("message", message);
 
-        Employee employee = new Employee(name,birthday,idCard,salary,phone,email,address
-                ,positionId,educationDegreeId,divisionId,userName);
+            try {
+                request.getRequestDispatcher("employee/employee.jsp").forward(request, response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            List<Employee> employeeList = employeeService.findAll();
+            List<Division> divisionList = divisionService.findAll();
+            List<Position> positionList = positionService.findAll();
+            List<Education> educationList = educationService.findAll();
 
-        User user = new User(userName,password);
-        userService.create(user);
-        employeeService.create(employee);
 
-            request.setAttribute("mess", "successfull create");
-            request.setAttribute("employee", employee);
-            request.setAttribute("user", user);
-        try {
-            request.getRequestDispatcher("employee/create-employee.jsp").forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            request.setAttribute("employeeList", employeeList);
+            request.setAttribute("divisionList", divisionList);
+            request.setAttribute("positionList", positionList);
+            request.setAttribute("educationList", educationList);
+            request.setAttribute("validate", validate);
+
+            try {
+                request.getRequestDispatcher("employee/create-employee.jsp").forward(request, response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     private void showEmployeeList(HttpServletRequest request, HttpServletResponse response) {
         List<Employee> employeeList = employeeService.findAll();
+        List<Division> divisionList = divisionService.findAll();
+        List<Position> positionList = positionService.findAll();
+        List<Education> educationList = educationService.findAll();
+
 
         request.setAttribute("employeeList", employeeList);
+        request.setAttribute("divisionList", divisionList);
+        request.setAttribute("positionList", positionList);
+        request.setAttribute("educationList", educationList);
+
         try {
             request.getRequestDispatcher("employee/employee.jsp").forward(request, response);
         } catch (ServletException e) {
