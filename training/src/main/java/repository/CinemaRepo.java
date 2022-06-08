@@ -9,4 +9,5 @@ public interface CinemaRepo {
 
     void create (Cinema cinema);
     void delete (String id);
+    Cinema findbyId(String idFind);
 }

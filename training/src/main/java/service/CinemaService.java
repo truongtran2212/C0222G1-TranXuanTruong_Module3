@@ -11,4 +11,5 @@ public interface CinemaService {
     List<Cinema> findAll();
     Map<String, String> create (HttpServletRequest request, HttpServletResponse response);
     void delete (String id);
+    Cinema findbyId(String idFind);
 }

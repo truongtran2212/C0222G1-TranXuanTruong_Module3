@@ -29,7 +29,7 @@ public class CinemaRepoImpl implements CinemaRepo {
                 int amountTicket = resultSet.getInt("amount_ticket");
                 int status = resultSet.getInt("status");
 
-                Cinema cinema = new Cinema(id, idFilm, showDay, amountTicket,status);
+                Cinema cinema = new Cinema(id, idFilm, showDay, amountTicket, status);
                 cinemaList.add(cinema);
             }
         } catch (SQLException throwables) {
@@ -45,10 +45,10 @@ public class CinemaRepoImpl implements CinemaRepo {
         Connection connection = BaseRepository.getConnectDB();
         try {
             PreparedStatement ps = connection.prepareStatement(create);
-            ps.setString(1,cinema.getId());
-            ps.setInt(2,cinema.getIdFilm());
-            ps.setString(3,cinema.getShowDay());
-            ps.setInt(4,cinema.getAmountTicket());
+            ps.setString(1, cinema.getId());
+            ps.setInt(2, cinema.getIdFilm());
+            ps.setString(3, cinema.getShowDay());
+            ps.setInt(4, cinema.getAmountTicket());
 
             ps.executeUpdate();
 
@@ -65,12 +65,36 @@ public class CinemaRepoImpl implements CinemaRepo {
         Connection connection = BaseRepository.getConnectDB();
         try {
             PreparedStatement ps = connection.prepareStatement(updateDelete);
-            ps.setString(1,id);
+            ps.setString(1, id);
             ps.executeUpdate();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
+    }
+
+    @Override
+    public Cinema findbyId(String idFind) {
+        String findById = "select * from cinema where id = ?";
+        Cinema cinema = null;
+        Connection connection = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement ps = connection.prepareStatement(findById);
+            ps.setString(1, idFind);
+            ResultSet resultSet = ps.executeQuery();
+            resultSet.next();
+            String id = resultSet.getString("id");
+            int idFilm = resultSet.getInt("id_film");
+            String showDay = resultSet.getString("show_day");
+            int amountTicket = resultSet.getInt("amount_ticket");
+            int status = resultSet.getInt("status");
+
+            cinema = new Cinema(id, idFilm, showDay, amountTicket, status);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return cinema;
     }
 }

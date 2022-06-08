@@ -21,7 +21,7 @@ import java.util.Map;
 public class CinemaServlet extends HttpServlet {
 
     CinemaService cinemaService = new CinemaServiceImpl();
-    FilmService filmService =new FilmServiceImpl();
+    FilmService filmService = new FilmServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

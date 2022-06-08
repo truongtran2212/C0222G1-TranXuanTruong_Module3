@@ -2,17 +2,22 @@ package service.impl;
 
 import model.Cinema;
 import repository.CinemaRepo;
+import repository.FilmRepo;
 import repository.impl.CinemaRepoImpl;
 import service.CinemaService;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 public class CinemaServiceImpl implements CinemaService {
     CinemaRepo cinemaRepo = new CinemaRepoImpl();
+
+
     private static final String ID = "^CI-[0-9]{4}$";
 
     @Override
@@ -20,9 +25,16 @@ public class CinemaServiceImpl implements CinemaService {
         return cinemaRepo.findAll();
     }
 
+
+    @Override
+    public Cinema findbyId(String id) {
+        return cinemaRepo.findbyId(id);
+    }
+
     @Override
     public Map<String, String> create(HttpServletRequest request, HttpServletResponse response) {
         Map<String, String> validate = new LinkedHashMap<>();
+
 
         String id = request.getParameter("id");
         if (!id.matches(ID)) {
@@ -32,7 +44,9 @@ public class CinemaServiceImpl implements CinemaService {
             validate.put("id", "không được để trống");
 
         }
-
+        if (findbyId(id) != null) {
+            validate.put("id", "Đã trùng id");
+        }
 
         int idFilm = 0;
         try {
@@ -72,4 +86,6 @@ public class CinemaServiceImpl implements CinemaService {
     public void delete(String id) {
         cinemaRepo.delete(id);
     }
+
+
 }
